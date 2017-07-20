@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import {  fetchUserDetail } from "../actions";
 
 class User extends Component {
+    constructor (props) {
+        super(props);
+        this.handleUrl = this.handleUrl.bind(this);
+    }
     componentWillMount() {
       this.props.fetchUserDetail(this.props.userId);
     }
@@ -27,11 +31,16 @@ class User extends Component {
 
                         Phone: <p className="card-text mb-2 text-muted">{user.phone}</p>
 
-                        Website:<Link to={user.website} target="_blank" >{user.website}</Link>
+                        Website:<Link to={user.website} target="_blank" onClick={this.handleUrl}>{user.website}</Link>
                     </div>
                 </div>
             </div>
         );
+    }
+
+    handleUrl (event) {
+        event.nativeEvent.preventDefault();
+        window.open(`http://www.${this.props.user.website}`);
     }
 }
 
