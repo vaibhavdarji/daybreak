@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 0;
+}
+
+.navigation li {
+    list-style: none;
+    display: inline-block;
+    width: calc(30% / 3);
+    text-align: center;
+
+    border-radius: 5px;
+}
+.navigation li a {
+    text-decoration: none;
+    color: cadetblue;
+}
+
+.navigation li a:hover {
+    color: darkcyan;
+
+}
